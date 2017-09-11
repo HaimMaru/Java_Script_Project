@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <style>
+        body
+        {
+            background-image: url(https://homepages.cae.wisc.edu/~ece533/images/watch.png);
+        }
+
+        div
+        {
+            background-color:#6d98f1;
+            border:solid 5px yellow;
+            width:520px;
+            height:460px;
+            margin:100px 300px 100px 500px;
+        }
+
+        input
+        {
+            border-radius: 4px;
+            background-color: #000000;
+            color: yellow;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            width:100px;
+            height:100px;
+            font-size:40px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form name = "calculator">
+            <input id="Insert" type="text" name="ANSWER" value="" style="width:510px; height:50px"; maxlength="15"; readonly />
+            <br />
+            <input id="btn" type=button name="SEVEN" value="7" OnClick="document.calculator.ANSWER.value += '7'">
+            <input id="btn" type=button name="EIGHT" value="8" OnClick="document.calculator.ANSWER.value+='8'">
+            <input id="btn" type=button name="NINE" value="9" OnClick="document.calculator.ANSWER.value+='9'">
+            <input id="btn" type=button name="ADD" value="+" OnClick="document.calculator.ANSWER.value+='+'">
+            <br />
+            <input id="btn" type=button name="FOUR" value="4" OnClick="document.calculator.ANSWER.value += '4'">
+            <input id="btn" type=button name="FIVE" value="5" OnClick="document.calculator.ANSWER.value+='5'">
+            <input id="btn" type=button name="SIX" value="6" OnClick="document.calculator.ANSWER.value+='6'">
+            <input id="btn" type=button name="SUBSTRACT" value="-" OnClick="document.calculator.ANSWER.value+='-'">
+            <input id="btn" type=button name="DELETE" value="DEL" OnClick="DeleteLastChar(Insert.value)">
+            <br />
+            <input id="btn" type=button name="ONE" value="1" OnClick="document.calculator.ANSWER.value+='1'">
+            <input id="btn" type=button name="TWO" value="2" OnClick="document.calculator.ANSWER.value+='2'">
+            <input id="btn" type=button name="THREE" value="3" OnClick="document.calculator.ANSWER.value+='3'">
+            <input id="btn" type=button name="MULTIPLY" value="*" OnClick="document.calculator.ANSWER.value+='*'">
+            <input id="btn" type="reset" name="CLEAR" value="C" OnClick="document.calculator.ANSWER.value+=''">
+            <br />
+            <input id="btn" type=button name="DECIMAL" value="." OnClick="document.calculator.ANSWER.value+='.'">
+            <input id="btn" type=button name="ZERO" value="0" OnClick="document.calculator.ANSWER.value+='0'">
+            <input id="btn" type=button name="RESULT" value="=" OnClick="document.calculator.ANSWER.value = eval(document.calculator.ANSWER.value)">
+            <input id="btn" type=button name="DEVIDE" value="/" OnClick="document.calculator.ANSWER.value+='/'">
+            
+        </form>
+    </div>
+
+    <script>
+        function DeleteLastChar()
+        {
+            Insert.value = Insert.value.slice(0, Insert.value.length - 1);
+        }
+    </script>
+</body>
+</html>
